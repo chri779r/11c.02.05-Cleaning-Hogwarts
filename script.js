@@ -27,12 +27,19 @@ async function listStudents() {
     dest.innerHTML = "";
 
     theStudents.forEach((student) => {
+      const firstSpace = student.fullname.indexOf(" ");
+      const lastSpace = student.fullname.indexOf(" ");
+      const firstName = student.fullname.substring(firstSpace, 50).trim();
+      const lastName = student.fullname.substring(firstSpace, 50).trim();
+      const firstLetter = student.fullname.substring(0, 1);
+
       if (theFilter == "all" || theFilter == student.house) {
         //console.log(student);
         let clone = temp.cloneNode(true).content;
         clone.querySelector("h3").textContent = student.fullname;
         clone.querySelector("#house").textContent = student.house;
         clone.querySelector("#gender").textContent = student.gender;
+        clone.querySelector("#photo").src = "images/" + lastName + "_" + firstLetter + ".png";
         clone.querySelector(".student").addEventListener("click", () => showDetails(student));
         dest.appendChild(clone);
       }
@@ -40,12 +47,16 @@ async function listStudents() {
   }
 
   function showDetails(student) {
+    const firstSpace = student.fullname.indexOf(" ");
+    const lastName = student.fullname.substring(firstSpace, 400).trim();
+    const firstLetter = student.fullname.substring(0, 1);
     console.log(student);
     popup.style.display = "block";
     document.querySelector(".close").addEventListener("click", () => (popup.style.display = "none"));
     popup.querySelector("h3").textContent = student.fullname;
     popup.querySelector("#house").textContent = student.house;
     popup.querySelector("#gender").textContent = student.gender;
+    popup.querySelector("#photo").src = "images/" + lastName + "_" + firstLetter + ".png";
   }
 
   function buttonClick() {
