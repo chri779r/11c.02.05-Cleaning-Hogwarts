@@ -29,10 +29,11 @@ async function listStudents() {
     theStudents.forEach((student) => {
       const firstSpace = student.fullname.indexOf(" ");
       const lastSpace = student.fullname.indexOf(" ");
-      const firstName = student.fullname.substring(0, firstSpace).trim();
-      //const nickName = student.fullname.substring(firstSpace, lastSpace).trim();
-      const middleName = student.fullname.substring(firstSpace, lastSpace).trim();
-      const lastName = student.fullname.substring(lastSpace).trim();
+      const fullname = student.fullname.trim();
+      const firstName = student.fullname.substring(0, firstSpace); //.trim();
+      //const nickName = student.fullname.substring(firstSpace, lastSpace)//.trim();
+      const middleName = student.fullname.substring(firstSpace, lastSpace); //.trim();
+      const lastName = student.fullname.substring(lastSpace); //.trim();
       const firstLetter = student.fullname.substring(0, 1);
 
       const split = new Set([firstName, middleName, lastName]);
