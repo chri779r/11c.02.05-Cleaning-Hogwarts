@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cleaning Hogwarts</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Cleaning hogwarts</h1>
+      <nav id="filter_buttons">
+        <button class="filter clicked" data-student="all">All Students</button>
+        <button class="filter" data-student="Slythering">House Slytherin</button>
+        <button class="filter" data-student="Hufflepuff">House Hufflepuff</button>
+        <button class="filter" data-student="Ravenclaw">House Ravenclaw</button>
+        <button class="filter" data-student="Gryffindor">House Gryffindor</button>
+      </nav>
+    </header>
+
+    <main>
+      <h3 class="section_header">All actors</h3>
+      <section id="popup">
+        <article class="popup_content">
+          <div class="close">X</div>
+          <div class="popup_column">
+            <h3 class="nickname lastname"></h3>
+            <h4 class="firstname"></h4>
+            <p id="house"></p>
+            <p id="gender"></p>
+            <img id="photo" src="" alt="" />
+          </div>
+          <div class="popup_column"></div>
+        </article>
+      </section>
+      <section id="students"></section>
+    </main>
+
+    <template id="student_template">
+      <article class="student">
+        <h3 class="nickname lastname"></h3>
+        <h4 class="firstname"></h4>
+        <p id="house"></p>
+        <p id="gender"></p>
+        <img id="photo" src="" alt="" />
+      </article>
+    </template>
+
+    <script src="script.js"></script>
+  </body>
+</html>
