@@ -5,12 +5,13 @@ document.addEventListener("DOMContentLoaded", listStudents);
 async function listStudents() {
   console.log("start");
 
-  let theStudents;
-  let theFilter = "all";
-  let popup = document.querySelector("#popup");
+  let theStudents = [];
 
-  let url = "https://petlatkea.dk/2020/hogwarts/students.json";
-  let jsonData = await fetch(url);
+  const theFilter = "all";
+  const popup = document.querySelector("#popup");
+
+  const url = "https://petlatkea.dk/2021/hogwarts/students.json";
+  const jsonData = await fetch(url);
   theStudents = await jsonData.json();
   console.log(theStudents);
 
@@ -20,7 +21,7 @@ async function listStudents() {
 
   showStudents();
   function showStudents() {
-    console.log("showStudents");
+    //console.log("showStudents");
 
     let dest = document.querySelector("#students");
     let temp = document.querySelector("#student_template");
@@ -30,18 +31,18 @@ async function listStudents() {
       const firstSpace = student.fullname.indexOf(" ");
       const lastSpace = student.fullname.indexOf(" ");
       const fullname = student.fullname.trim();
-      const firstName = student.fullname.substring(0, firstSpace); //.trim();
-      //const nickName = student.fullname.substring(firstSpace, lastSpace)//.trim();
-      const middleName = student.fullname.substring(firstSpace, lastSpace); //.trim();
-      const lastName = student.fullname.substring(lastSpace); //.trim();
-      const firstLetter = student.fullname.substring(0, 1);
+
+      let firstName = student.fullname.substring(0, firstSpace).trim();
+      let nickName = student.fullname.substring(firstSpace, lastSpace).trim();
+      let middleName = student.fullname.substring(firstSpace, lastSpace).trim();
+      let lastName = student.fullname.substring(lastSpace).trim();
+      let firstLetter = student.fullname.substring(0, 1);
 
       const split = new Set([firstName, middleName, lastName]);
       let nameSplit = Array.from(split);
       console.log(nameSplit);
 
       if (theFilter == "all" || theFilter == student.house) {
-        //console.log(student);
         let clone = temp.cloneNode(true).content;
         clone.querySelector("h3").textContent = student.fullname;
         clone.querySelector("#house").textContent = student.house;
@@ -49,6 +50,7 @@ async function listStudents() {
         clone.querySelector("#photo").src = "images/" + lastName + "_" + firstLetter + ".png";
         clone.querySelector(".student").addEventListener("click", () => showDetails(student));
         dest.appendChild(clone);
+        console.log(student);
       }
     });
   }
