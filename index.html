@@ -34,17 +34,33 @@
           <div class="popup_column"></div>
         </article>
       </section>
-      <section id="students"></section>
+      <table id="list">
+        <thead>
+          <tr>
+            <th>firstname</th>
+            <th>nickname</th>
+            <th>middlename</th>
+            <th>lastname</th>
+            <th>house</th>
+            <th>gender</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- student template will be copied and inserted here -->
+        </tbody>
+      </table>
     </main>
 
-    <template id="student_template">
-      <article class="student">
-        <h3 class="nickname lastname"></h3>
-        <h4 class="firstname"></h4>
-        <p id="house"></p>
-        <p id="gender"></p>
-        <img id="photo" src="" alt="" />
-      </article>
+    <template id="student">
+      <tr>
+        <td data-field="firstname">NAME</td>
+        <img src="" alt="" />
+        <td data-field="nickname">NAME</td>
+        <td data-field="middlename">NAME</td>
+        <td data-field="lastname">NAME</td>
+        <td data-field="house">HOUSE</td>
+        <td data-field="gender">GENDER</td>
+      </tr>
     </template>
     <script src="hogwarts.js"></script>
     <!-- <script src="script.js"></script> -->
