@@ -7,20 +7,23 @@
     <title>Cleaning Hogwarts</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
+
   <body>
-    <header>
-      <h1>Cleaning hogwarts</h1>
-      <nav id="filter_buttons">
-        <button class="filter clicked" data-student="all">All Students</button>
-        <button class="filter" data-student="Slythering">House Slytherin</button>
-        <button class="filter" data-student="Hufflepuff">House Hufflepuff</button>
-        <button class="filter" data-student="Ravenclaw">House Ravenclaw</button>
-        <button class="filter" data-student="Gryffindor">House Gryffindor</button>
-      </nav>
+    <header id="topbar">
+      <h1>Hogwarts School of Witchcraft and Wizardry</h1>
     </header>
+    <img id="logo" src="/images/02hogwarts.png" alt="Hogwarts Logo" />
 
     <main>
-      <h3 class="section_header">All actors</h3>
+      <nav id="filter_divs">
+        <div class="filter clicked" data-student="all"></div>
+        <div class="filter" data-student="Slytherin"></div>
+        <div class="filter" data-student="Hufflepuff"></div>
+        <div class="filter" data-student="Ravenclaw"></div>
+        <div class="filter" data-student="Gryffindor"></div>
+      </nav>
+
+      <h3 class="section_header">All Students</h3>
       <section id="popup">
         <article class="popup_content">
           <div class="close">X</div>
@@ -37,12 +40,12 @@
       <table id="list">
         <thead>
           <tr>
-            <th>firstname</th>
-            <th>nickname</th>
-            <th>middlename</th>
-            <th>lastname</th>
-            <th>house</th>
-            <th>gender</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
           </tr>
         </thead>
         <tbody>

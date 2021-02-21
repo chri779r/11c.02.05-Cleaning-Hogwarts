@@ -12,7 +12,7 @@ const Student = {
 };
 
 function beginSemester() {
-  console.log("brooms ready");
+  console.log("Achio!");
 
   loadJSON();
 }
@@ -71,18 +71,18 @@ function prepareObjects(jsonData) {
     console.log(studentCreate);
   });
 
-  patronumList();
+  showAllStudents();
 }
 
-function patronumList() {
+function showAllStudents() {
   // clear the list
   document.querySelector("#list tbody").innerHTML = "";
 
   // build a new list
-  allStudents.forEach(expectoPatronum);
+  allStudents.forEach(cloneStudentData);
 }
 
-function expectoPatronum(student) {
+function cloneStudentData(student) {
   //create clone
   const clone = document.querySelector("template#student").content.cloneNode(true);
   // set clone data

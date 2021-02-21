@@ -48,7 +48,7 @@ async function listStudents() {
         clone.querySelector("#house").textContent = student.house;
         clone.querySelector("#gender").textContent = student.gender;
         clone.querySelector("#photo").src = "images/" + lastName + "_" + firstLetter + ".png";
-        clone.querySelector(".student").addEventListener("click", () => showDetails(student));
+        clone.querySelector("#student").addEventListener("click", () => showDetails(student));
         dest.appendChild(clone);
         console.log(student);
       }

@@ -2,51 +2,73 @@
   box-sizing: border-box;
   margin: 0 auto;
 }
-
-body {
-  background-color: #ececec;
+@font-face {
+  font-family: "Harry Potter";
+  src: url("/fonts/HarryPotter.woff2") format("woff2"), url("/fonts/HarryPotter.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
-header {
-  text-align: center;
-  background-color: rgb(37, 42, 68);
-  padding: 1rem;
-}
-
-header > h1 {
-  padding: 1rem;
-  margin-bottom: 1rem;
-}
-
-#filter_buttons {
+/*-----------------HEADER-------------------*/
+#topbar {
   display: flex;
-  flex-wrap: wrap;
-  max-width: 80%;
-  margin-bottom: 1rem;
-  justify-content: space-evenly;
+  flex-flow: wrap row;
+  background-color: #740001;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  height: 180px;
 }
 
-.filter {
-  border: none;
-  font-size: 1.1rem;
-  background-color: rgb(37, 42, 68);
-  color: rgba(255, 255, 255, 0.7);
-  padding: 0.5rem 1rem;
-  margin: 0;
+#topbar > h1 {
+  font-family: "Harry Potter";
+  color: #ececec;
+  font-size: 3.2em;
+}
+
+#logo {
+  justify-content: left;
+  padding: 1em;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/*-----------------FILTER BUTTONS-------------------*/
+#filter_divs {
+  display: flex;
+  width: 80%;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+#filter_divs > div {
+  height: 150px;
+  width: 150px;
   cursor: pointer;
-  font-family: sans-serif;
-  transition: all 0.1s ease-in-out;
+  transition: all 0.5s ease-in;
 }
 
-.filter:hover {
-  color: rgb(255, 255, 255);
-  border-bottom: solid 2px rgba(255, 255, 255, 0.7);
+div[data-student="all"] {
+  background-image: url(/images/hogwarts.png);
 }
 
-.clicked {
-  color: rgb(255, 255, 255);
-  border-bottom: solid 2px rgb(255, 255, 255);
+div[data-student="Slytherin"] {
+  background-image: url(/images/01slytherin.png);
 }
+div[data-student="Hufflepuff"] {
+  background-image: url(/images/01hufflepuff.png);
+}
+div[data-student="Ravenclaw"] {
+  background-image: url(/images/01ravenclaw.png);
+  cursor: pointer;
+}
+div[data-student="Gryffindor"] {
+  background-image: url(/images/01gryffindor.png);
+  cursor: pointer;
+}
+/*-----------------STUDENTS LIST-------------------*/
 
 main {
   max-width: 1200px;
@@ -54,26 +76,8 @@ main {
 
 main > h3 {
   text-align: center;
-}
-h1 {
-  padding: 1.1em 0 1.1em 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 2em;
-  text-transform: uppercase;
-  color: whitesmoke;
-}
-h2 {
-  margin: 1em;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 1.7em;
-  text-transform: uppercase;
-  color: whitesmoke;
-}
-h3 {
-  padding: 1.1em 0 1.1em 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 1.7em;
-  text-transform: uppercase;
+  font-family: "Harry Potter";
+  font-size: 3rem;
 }
 
 p {
@@ -88,7 +92,7 @@ p {
   margin: 1.1em 0 1.1em 0;
 }
 
-.student {
+#student {
   cursor: pointer;
   flex-basis: 100%;
   flex-grow: 1;
